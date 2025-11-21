@@ -41,7 +41,7 @@ class MyGallery extends Component {
                             <Spinner
                                 animation="border"
                                 variant="danger"
-                                className="my-4"
+                                className="my-3"
                             />
                         </div>
                     )}
