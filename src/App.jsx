@@ -13,8 +13,8 @@ function App() {
       <MyNavbar />
       <UnderNavbar />
       <MyGallery movieTitle="Star Wars" sectionTitle="Trending Now" />
-      <MyGallery movieTitle="Lord of the rings" sectionTitle="Watch it Again" />
-      <MyGallery movieTitle="Pokemon" sectionTitle="New Releases" />
+      <MyGallery movieTitle="Pokemon" sectionTitle="Watch it Again" />
+      <MyGallery movieTitle="Lord of the rings" sectionTitle="New Releases" />
       <MyFooter />
     </>
   )

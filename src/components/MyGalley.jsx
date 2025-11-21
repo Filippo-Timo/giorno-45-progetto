@@ -1,4 +1,4 @@
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
 import { Component } from 'react';
 
 class MyGallery extends Component {
@@ -37,10 +37,11 @@ class MyGallery extends Component {
                     <h2 className="mb-2">{this.props.sectionTitle}</h2>
 
                     {this.state.loading && (
-                        <div>
+                        <div className="d-flex justify-content-center">
                             <Spinner
                                 animation="border"
                                 variant="danger"
+                                className="my-5"
                             />
                         </div>
                     )}
