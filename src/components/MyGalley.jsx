@@ -46,7 +46,7 @@ class MyGallery extends Component {
                         </div>
                     )}
                     {this.state.error && (
-                        <Alert variant="danger">C'è stato un errore nel caricamento della pagina! Ci scusiamo per l'inconveniente</Alert>
+                        <Alert variant="danger">C'è stato un errore nel caricamento della pagina! Prova a ricaricaricare la pagina.</Alert>
                     )}
 
                     <Row>
