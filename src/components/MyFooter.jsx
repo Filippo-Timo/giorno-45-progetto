@@ -15,7 +15,6 @@ const MyFooter = () => {
                             <i className="bi bi-youtube footer-icon fs-4"></i>
                         </div>
 
-                        {/* Links Grid */}
                         <Row className="row-cols-2 row-cols-md-4 g-3 mb-4">
                             <Col>
                                 <div className="footer-links">
@@ -48,14 +47,12 @@ const MyFooter = () => {
                             </Col>
                         </Row>
 
-                        {/* Service Code Button */}
                         <div className="mb-4">
                             <button className="btn btn-outline-secondary btn-sm px-3 py-2">
                                 Service Code
                             </button>
                         </div>
 
-                        {/* Copyright */}
                         <div className="text-secondary">
                             <small>© 1997-2023 Netflix, Inc.</small>
                         </div>
