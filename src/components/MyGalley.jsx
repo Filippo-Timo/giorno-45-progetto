@@ -1,9 +1,11 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { Component } from 'react';
 
 class MyGallery extends Component {
     state = {
         films: [],
+        loading: true,
+        error: false,
     };
     arrayFilmSearch = () => {
         const URL = "http://www.omdbapi.com/?apikey=eac09742&s=" + this.props.movieTitle;
@@ -17,10 +19,11 @@ class MyGallery extends Component {
             })
             .then((arrayOfMovies) => {
                 console.log(arrayOfMovies);
-                this.setState({ films: arrayOfMovies.Search.slice(0, 6) });
+                this.setState({ films: arrayOfMovies.Search.slice(0, 6), loading: false });
             })
             .catch((err) => {
-                console.log("Error:" + err);
+                this.setState({ loading: false, error: true });
+                console.log("Errore:" + err);
             });
     };
     componentDidMount() {
@@ -32,6 +35,19 @@ class MyGallery extends Component {
             <>
                 <Container fluid className="text-white p-2 my-3">
                     <h2 className="mb-2">{this.props.sectionTitle}</h2>
+
+                    {this.state.loading && (
+                        <div>
+                            <Spinner
+                                animation="border"
+                                variant="danger"
+                            />
+                        </div>
+                    )}
+                    {this.state.error && (
+                        <Alert variant="danger">C'è stato un errore nel caricamento della pagina! Ci scusiamo per l'inconveniente</Alert>
+                    )}
+
                     <Row>
                         {this.state.films.map((singleMovie) => (
                             <Col xs={6} md={4} lg={2} className="mb-4" key={singleMovie.imdbID}>
