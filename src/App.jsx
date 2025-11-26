@@ -18,7 +18,7 @@ function App() {
       <UnderNavbar />
       <Routes>
         <Route element={<TVshows />} path="/TVshows" />
-        <Route element={<MovieDetails />} path="/MovieDetails:MovieId" />
+        <Route element={<MovieDetails />} path="/MovieDetails/:MovieId" />
         <Route element={
           <>
             <MyGallery movieTitle="Star Wars" sectionTitle="Trending Now" />
