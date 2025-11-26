@@ -2,8 +2,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link, useLocation } from 'react-router-dom';
 
 const MyNavbar = () => {
+
+    const location = useLocation()
+
     return (
         <>
             <Navbar collapseOnSelect expand="lg" data-bs-theme="dark">
@@ -12,11 +16,13 @@ const MyNavbar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#Home" active className="fw-bold">Home</Nav.Link>
-                            <Nav.Link href="#tvshows" className="fw-bold">TV Shows</Nav.Link>
+
+                            <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>Home</Link>
+                            <Link to="/TVshows" className={location.pathname === "/TVshows" ? "nav-link active" : "nav-link"}>TV Shows</Link>
                             <Nav.Link href="#movies" className="fw-bold">Movies</Nav.Link>
                             <Nav.Link href="#recentlyadded" className="fw-bold">Recently Added</Nav.Link>
                             <Nav.Link href="#mylist" className="fw-bold">My List</Nav.Link>
+
                         </Nav>
                         <Nav className="d-flex flex-row align-items-center justify-content-start gap-3">
                             <Nav.Link href="#deets" className="fs-5"><i className="bi bi-search"></i></Nav.Link>
