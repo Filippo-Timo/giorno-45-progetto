@@ -41,7 +41,7 @@ const MovieDetails = () => {
         <Container>
             <Row className="justify-content-center">
                 <Col xs={12} md={6}>
-                    <h2>DETTAGLI FILM</h2>
+                    <h2 className="text-light text-center my-4">DETTAGLI FILM</h2>
                     {loading ? (
                         <div className="text-center">
                             <Spinner animation="border" variant="success" />
